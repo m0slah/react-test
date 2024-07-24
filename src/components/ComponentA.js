@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import ComponentB from "./ComponentB";
+
+export const nameContext = createContext();
 
 const ComponentA = () => {
   const [name, setname] = useState("dave");
@@ -9,7 +11,9 @@ const ComponentA = () => {
       <div className="box">
         <p>Component A</p>
         <p>hello: {name}</p>
-        <ComponentB name={name} />
+        <nameContext.Provider value={name}>
+          <ComponentB />
+        </nameContext.Provider>
       </div>
     </div>
   );
