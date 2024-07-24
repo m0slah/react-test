@@ -1,10 +1,10 @@
 import ComponentD from "./ComponentD";
 
-const ComponentC = ({ name }) => {
+const ComponentC = () => {
   return (
     <div className="box">
       <p>Component C</p>
-      <ComponentD name={name} />
+      <ComponentD />
     </div>
   );
 };
